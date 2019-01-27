@@ -1,8 +1,10 @@
 package com.concordia.cejv669.calculator;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -21,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //               int num1 = Integer.parseInt(editNum1.getText().toString());
 
+                InputMethodManager imm =
+                        (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
                 EditText n1=findViewById(R.id.number1);
                 int num1 = Integer.parseInt(n1.getText().toString());
 
